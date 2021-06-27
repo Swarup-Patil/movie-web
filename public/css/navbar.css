@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Oswald;  
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+.logoname{
+    color: #D81A24;
+    font-size: 30px;
+    margin: 0 30px;
+}
+
+.main-nav{
+    height: 60px;
+    background-color: #151515;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-link{
+    padding-right: 20px;
+}
+
+.nav-items-left, .nav-list, .nav-items-right{
+    display: flex;
+    align-self: center;
+}
+
+.icons{
+    padding-right: 30px;
+}

@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Oswald;
+    background-color: #151515;
+    overflow: hidden;
+}
+
+.cover-img{
+    width: 55%;
+}
+
+/* ________heading_______ */
+.title{
+    margin-top: 3rem;
+    color: #D81A24;
+    font-size: 55px;
+    text-align: center;
+}
+
+.center{
+    text-align: center;
+}
+
+.sub-title{
+    color: white;
+    font-size: 35px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+/* __________FORM___________ */
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 30rem;
+    margin: 0 auto;
+}
+
+.form-control{
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    padding-bottom: 15px;
+    border-bottom: 2px  solid white;
+}
+
+.form input[type="text"],.form input[type="email"], .form input[type="password"]{
+    background-color: transparent;
+    box-shadow: none;
+    outline: none;
+    color: white;
+}
+
+/* enable absolute positioning */
+.form-content{
+    position: relative; 
+    width: 450px;
+    margin-bottom: 32px;
+}
+
+/* style icon */
+.form-content .icon {
+  position: absolute;
+}
+
+/* add padding  */
+.left input  { 
+    padding-left: 35px; 
+}
+
+::placeholder{
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 36px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.form-control::placeholder{
+    color: white;
+}
+
+.alert{
+    padding: 0;
+    font-size: 14px;
+    color: #D81A24;
+}
+
+/* __________BUTTON_____________ */
+.button{
+    font-size: 25px;
+    font-weight: 400;
+    background-color: #D81A24;
+    color: white;
+    width: 161px;
+    height: 54px;
+    border: none;
+    border-radius: 30px;
+    transition: 0.2s;
+}
+
+.button:hover{
+    color: #D81A24;
+    background-color: #fff;
+}
+
+.user-forms{
+    display: flex;
+}
+
+.account{
+    color: #fff;
+    margin-top: 0.5rem;
+}
+
+.account span a{
+    color: #fff;
+}

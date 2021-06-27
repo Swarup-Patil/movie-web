@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/navbar.css">
+
+<style>
+html{
+    height: 100%;
+}
+
+body{
+    background-color: #151515;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+/* _____________cards______________ */
+.secondary-title{
+    display: flex;
+    color: white;
+    align-items: center;
+    font-size: 24px;
+    padding:30px 40px 20px;
+    font-family: Montserrat;
+}
+
+.secondary-title img{
+    margin-right: 10px;
+}
+
+.sub-title{
+    font-family: Montserrat;
+    font-weight: 400;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.411);
+}
+
+.remove{
+    font-weight: 400;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.411);
+    background: none;
+    border: none;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.cardcontainer{
+    font-family: Montserrat;
+    display: flex;
+    flex-wrap: wrap;
+    padding:0 40px 80px;
+    min-height: 380px;
+}
+
+.card{
+    box-shadow: 0px 0px 4px 0 rgb(255 255 255 / 20%), 0px 0px 15px 0 rgb(255 255 255 / 19%);
+    text-align: center;
+    border-radius: 20px;
+    margin: 5px;
+    text-align: center;
+    margin-right: 30px;
+}
+
+.card img{
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.movie-name{
+    font-size: 12px;
+}
+
+.row{
+    width: 1350px;
+    margin: auto;
+}
+    
+ /* __________________footer__________________ */
+.footer{
+    text-align: center;
+    height: 100px;
+}
+    
+#content{
+    flex: 1;
+}
+
+.line-horizontal{
+    width: 95%;
+    height: 1px;
+    background-color: white;
+    justify-content: center;
+    margin: auto;
+}
+
+.logo{
+    color: #D81A24;
+    font-size: 30px;
+}
+
+.socialmedia{
+    color: white;
+    font-size: 25px;
+}
+</style>
+    <title>Favourites</title>
+
+</head>
+<body>
+    <header class="main-header" id="content">
+        <nav class="main-nav">
+            <div class="nav-items-left">
+                <a href="#" class="logoname">
+                    <p>Spectre</p></a>
+                
+                    <ul class="nav-list">
+                        <li> <a href="/home" class="nav-link">| &nbsp; Home</a></li>
+                        <li> <a href="/movies" class="nav-link"> | &nbsp; Movies</a></li>
+                      </ul>
+                </div>
+                
+                <div class="nav-items-right">
+                    <a href="/cart" class="icons"><img src="/./assets/Vector.png" alt=""></a>
+                    <a href="/favourite" class="icons"><img src="/./assets/Vector (1).png" alt=""></a>
+                    <form action="/logout" method="POST">
+                        <button class="remove" href="/logout" class="icons"><img src="/./assets/Vector (2).png" alt="" ></button>
+                    </form>
+                </div>
+        </nav>
+    </header>
+
+
+    <div class="row">
+    <h2 class="title secondary-title"><span><img src="/./assets/Rectangle 8.png" alt=""></span>Favourites</h2>
+        <div class="cardcontainer">
+            <% item.forEach(items => {  %>
+            <form action="/deletefav/<%= items._id %>" method="POST">
+                <div class="card">
+                    <a href=""><img src="./uploads/<%= items.image %>" width="200" class="card-poster"></a>
+                    <div class="container">
+                      <a class="movie-name" href="/movie/<%= items.movieid %>"><%= items.name %></a>
+                      <p class="sub-title"><%= items.year %> | <%= items.country %> | <%= items.genre %> </p>
+                          <button type="submit" class="remove">Remove</button>
+                    </div>
+                </div>
+              </form>
+              <% }) %> 
+        </div>
+    </div>
+
+    <div class="footer" id="footer">
+        <div class="line-horizontal"></div>
+        <a href="#" class="logo"><p>Spectre</p></a>
+        <div class="socialmedia">
+         <a href="#" title="On Twitter"><i class='bx bxl-twitter' ></i></a>
+         <a href="#" title="On Instagram"><i class='bx bxl-instagram' ></i></a>
+         <a href="#" title="On Facebook"><i class='bx bxl-facebook-square' ></i></i></a>
+         <a href="#" title="On YouTube"><i class='bx bxl-youtube'></i></a>
+        </div>
+    </div>
+</body>
+</html>

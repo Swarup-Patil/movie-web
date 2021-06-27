@@ -1,0 +1,253 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body{
+      background-color: #151515;
+      color: white;
+  }
+  
+  .remove{
+      background: none;
+      border: none;
+  }
+  .row{
+      max-width: 1300px;
+      margin: auto;
+  }
+      /*picture and search */
+  
+  .hero{
+    background-image: url('./assets/poster\ 2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 480px;
+  }
+  
+  .hero-description {
+    color: white;
+    padding-top: 200px;
+    padding-left: 100px;
+  }
+  
+  .primary-title{
+    font-size: 45px;
+  }
+  
+  .hero-description p {
+    font-size: 30px;
+  }
+  
+  .form-control input[type="text"] {
+    background-color: transparent;
+    outline: none;
+    box-shadow: none;
+    color: black
+  }
+  
+  .form-control {
+    font-size: 24px;
+    background-color: white;
+    color: grey;
+    height: 54px;
+    border: none;
+    border-radius: 30px;
+    margin: 10px 100px 15px 0;
+  }
+  
+  input {
+    padding: 10px 20px;
+    border: none;
+    font-size: 20px;
+    font-family: Oswald;
+  }
+  
+  ::placeholder {
+    font-size: 20px;
+    font-family: Oswald;
+  }
+  
+  /* ________________cards_______________ */
+  .secondary-title{
+      display: flex;
+      align-items: center;
+      font-size: 24px;
+      padding: 80px 0 20px 0;
+      font-family: Montserrat;
+  }
+  
+  .secondary-title img{
+      margin-right: 10px;
+  }
+  
+  .cardcontainer {
+      font-family: Montserrat;
+      display: flex;
+      padding-bottom: 40px;
+      flex-wrap: wrap;
+  }
+  
+  .container{
+      padding: 10px 0;
+  }
+  
+  .card{
+      box-shadow: 0px 0px 4px 0 rgb(255 255 255 / 20%), 0px 0px 15px 0 rgb(255 255 255 / 19%);
+      text-align: center;
+      border-radius: 20px;
+      margin: 10px;
+      background-color: #151515;
+      text-align: center;
+
+  }
+  
+  .cards{
+      transition: 0.4s ease-in;
+  }
+  
+  .cards:hover{
+      opacity: 0.7;
+  }
+  
+  .card img{
+      border-radius: 20px;
+  }
+  
+  .box {
+      position: absolute;
+      margin-top: -5px;
+  }
+  
+  .box img{
+      border-radius: 0;
+  }
+  
+  .box img:hover {
+      opacity: 0.7;
+  }
+  
+  .movie-name{
+      font-size: 12px;
+  }
+  
+  .sub-title{
+      margin-bottom: 15px;
+      font-family: Montserrat;
+      font-weight: 400;
+      font-size: 10px;
+      color: rgba(255, 255, 255, 0.411);
+  }
+  
+  .text{
+      font-family: Montserrat;
+      padding-bottom: 10px;
+  }
+  
+  /* __________________footer__________________ */
+  .footer{
+    text-align: center;
+  }
+  
+  .line-horizontal{
+    width: 95%;
+    height: 1px;
+    background-color: white;
+    justify-content: center;
+    margin: auto;
+  }
+  
+  .logo{
+      color: #D81A24;
+      font-size: 30px;
+  }
+  
+  .socialmedia{
+      color: white;
+      font-size: 25px;
+  }
+  
+  /* _____________responsive________________ */
+  @media(max-width:768px){
+  .cardcontainer{
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: start;
+  }
+  
+  .cards{
+      padding: 20px;
+  }
+  
+  .secondary-title{
+    padding: 60px 0 20px 20px;
+    font-size: 22px;
+  }
+  
+  .hero-description {
+    padding-top: 100px;
+    padding-left: 20px;
+  }
+  
+  .primary-title{
+    font-size: 40px;
+  }
+  
+  .hero-description p {
+    font-size: 24px;
+  }
+  
+  .hero{
+    min-height: 300px;
+  }
+  
+  }
+  
+  @media(max-width:320px) {
+  .cardcontainer{
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+  }
+  
+  .cards{
+      padding-bottom: 15px;
+  }
+  
+  .line-horizontal{
+      width: 95%;
+  }
+  
+  .secondary-title{
+    padding: 40px 0 20px 20px;
+    font-size: 20px;
+  }
+  
+  .hero-description {
+    padding-top: 80px;
+    padding-left: 10px;
+  }
+  
+  .primary-title{
+    font-size: 35px;
+  }
+  
+  .hero-description p {
+    font-size: 20px;
+  }
+  
+  .hero{
+    min-height: 200px;
+  }
+  
+  input{
+    font-size: 15px;
+    width: 100%;
+  }
+  
+  .form-control{
+    margin: 10px 20px 15px 0;
+    height: 40px;
+  }
+  }

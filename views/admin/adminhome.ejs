@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/adminhome.css">
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <title>Admin Dashboard</title>
+
+<style>
+
+
+    
+  </style>
+</head>
+
+<body>
+  <!-- navbar -->
+  <header class="main-header">
+    <nav class="main-nav">
+        <div class="nav-items-left">
+            <a href="#" class="logoname">
+                <p>Spectre</p></a>
+            
+              <ul class="nav-list">
+                <li> <a href="#" class="nav-link">| &nbsp; Home</a></li>
+              </ul>
+        </div>
+        
+        <div class="nav-items-right">
+            <a href="/admin-add" class="icons"><img src="./assets/plus.png" alt=""></a>
+            <form action="/logout" method="POST">
+                <button class="remove" href="/logout" class="icons"><img src="/./assets/Vector (2).png" alt="" ></button>
+            </form>
+        </div>
+    </nav>
+</header>
+
+
+
+    <div class="row">
+      <div class="title secondary-title"><span><img src="./assets/Rectangle 8.png" alt=""></span>New Releases</div>
+      <div class="cardcontainer">
+        <% movies.forEach(movie => {  %>
+          <div class="cards">
+              <form action="" method="get">
+                  <div class="card">
+                    <div class="box">
+                      <a href="/editmovie/<%= movie._id %>"><img src="./assets/bxs-edit 1.png" alt=""></a>
+                    </div>
+                      <a href="/adminmovie/<%= movie._id %>"><img src="./uploads/<%= movie.image %>" width="200" class="card-poster"></a>
+                      <div class="container">
+                        <a class="movie-name" href="/adminmovie/<%= movie._id %>"><%= movie.name %></a>
+                        <p class="sub-title"><%= movie.year %> | <%= movie.country %> | <%= movie.genre %></p>
+                      </div>
+                  </div>
+                </form>
+          </div>
+          <% }) %> 
+      </div>
+  </div>
+
+
+
+  <!-- footer -->
+  <footer>
+    <div class="footer">
+      <div class="line-horizontal"></div>
+      <a href="#" class="logo">
+        <p>Spectre</p>
+      </a>
+      <div class="socialmedia">
+        <a href="#" title="On Twitter"><i class='bx bxl-twitter'></i></a>
+        <a href="#" title="On Instagram"><i class='bx bxl-instagram'></i></a>
+        <a href="#" title="On Facebook"><i class='bx bxl-facebook-square'></i></i></a>
+        <a href="#" title="On YouTube"><i class='bx bxl-youtube'></i></a>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

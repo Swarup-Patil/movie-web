@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/navbar.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #151515;
+    font-family: 'Oswald', sans-serif;
+}
+
+li{
+    list-style: none;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.container{
+    margin: 4rem 6rem;
+    max-width: 100%;
+}
+
+.remove{
+    background:none;
+    border:none;
+    cursor:pointer;
+}
+/* -------------------------label--------------------------- */
+
+.title{
+    font-family: 'Oswald', sans-serif;
+    font-size: 5rem;
+    font-weight: 700;
+    color: #fff;
+    padding-bottom: 0;
+}
+
+.red{
+    color: #D81A24;
+}
+.white{
+    color:#fff
+}
+
+.label{
+    font-family: 'Oswald', sans-serif;
+    display: flex;
+    color: #D81A24;
+    font-size: 3rem;
+    font-weight: 500;
+    border-bottom: 4px solid #fff;
+
+}
+
+.topic{
+    display: flex;
+    justify-content: space-between;
+}
+
+.product{
+    width: 60%;
+    padding-left: 2rem;
+}
+
+.category{
+    text-align: center;
+    width: 12%;
+}
+
+/* ---------------items------------------ */
+
+.item{
+    display: flex;
+    flex-direction: column;
+}
+
+.single{
+    display: flex;
+    align-items: center;
+}
+
+.item-name{
+    display: flex;
+    font-size: 2.5rem;
+    font-weight: 500;
+    align-items: center;
+    height: min-content;
+    /* margin-right: 30rem; */
+    width: 60%;
+}
+
+.price {
+    font-size: 2.5rem;
+    color: #fff;
+    font-weight: 500;
+    height: min-content;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+
+.icon {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.icon a{
+    color: #fff;
+}
+
+.x{
+    background: none;
+    border: none;
+    font-size: 3rem;
+    color: #D81A24;
+    cursor: pointer;
+}
+.nav-link{
+    font-size: 15px;
+}
+/* --------------------total------------------- */
+
+.product-image{
+    width: 10rem;
+    margin-right: 1rem;
+    height: auto;
+}
+
+.total{
+    border-top: 4px solid #D81A24;
+    font-size: 4rem;
+    font-family: 'Oswald', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0 20rem 4rem;
+}
+
+.final{
+    margin-top: 3rem;
+}
+
+.cost{
+    color: #fff;
+}
+
+.button{
+    margin: 2rem 0 0 0;
+    padding: 1.5rem 2rem;
+    font-size: 2rem;
+    font-family: 'Oswald', sans-serif;
+    cursor: pointer;
+    color: #FFE7E7;
+    background-color: #D81A24;
+    border: D81A24 3px solid;
+    border-radius: 4rem;
+    transition: ease-in 0.35s;
+}
+
+.button:hover{
+
+    color: #D81A24;
+    border: #D81A24 3px solid;
+    background-color: #FFE7E7;
+    transform: translateY(-0.5rem);
+}
+
+/* __________________footer__________________ */
+.footer{
+    text-align: center;
+}
+
+.line-horizontal{
+    width: 95%;
+    height: 1px;
+    background-color: white;
+    justify-content: center;
+    margin: auto;
+}
+
+.logo{
+    color: #D81A24;
+    font-size: 30px;
+}
+
+.socialmedia{
+    color: white;
+    font-size: 25px;
+}
+</style>
+    <title>Your Cart</title>
+</head>
+<body>
+    <header class="main-header">
+        <nav class="main-nav">
+            <div class="nav-items-left">
+                <a href="#" class="logoname">
+                    <p>Spectre</p></a>
+                
+                    <ul class="nav-list">
+                        <li> <a href="/home" class="nav-link">| &nbsp; Home</a></li>
+                        <li> <a href="/movies" class="nav-link"> | &nbsp; Movies</a></li>
+                      </ul>
+                </div>
+                
+                <div class="nav-items-right">
+                    <a href="/cart" class="icons"><img src="/./assets/Vector.png" alt=""></a>
+                    <a href="/favourite" class="icons"><img src="/./assets/Vector (1).png" alt=""></a>
+                    <form action="/logout" method="POST">
+                      <button class="remove" href="/logout" class="icons"><img src="/./assets/Vector (2).png" alt="" ></button>
+                  </form>
+        </nav>
+    </header>
+    
+<!-- -----------------------------label-------------------- -->
+
+<div class="title container">
+    <span class="white";style="font-family: 'Oswald', sans-serif;">Cart</span> 
+</div>
+
+<section class="label container">
+    
+    <div class="product white">
+        Movie Name
+    </div>
+
+    <div class="category white">
+        Country
+    </div>
+
+    <div class="category white">
+        Year
+    </div>
+
+    <div class="category white">
+        Price
+    </div>
+
+    
+
+</section>
+
+<!-- ---------------------------item------------------------- -->
+
+<section class="item">
+    <% orders.forEach(order => {  %>
+    <div class="single container">
+       <div class="item-name product">
+           <img class="product-image" src="./uploads/<%= order.image %>" alt="">
+           <div class="white"><%= order.name %></div>
+       </div>
+   
+       <span class="category price"><%= order.country %> </span>
+   
+       <div class="category quantity price"><%= order.year %></div>
+   
+       <span class="category price"><%= order.price %></span>  
+       
+       <form action="/deletecart/<%= order._id %>" method="POST">
+           <button type="submit" class="x"><i class='bx bx-x'></i></a>
+       </form>
+    </div> 
+    <% }) %> 
+
+   
+
+
+<!-- ------------------------------total--------------------------- -->
+ 
+<section class="total container">
+    <div class="final white"> 
+        TOTAL - <%= total %><span class="cost"></span>
+    </div>
+    <button type="submit" class="button">CHECKOUT</button>
+</section>
+
+<div class="footer">
+    <div class="line-horizontal"></div>
+    <a href="#" class="logo"><p>Spectre</p></a>
+    <div class="socialmedia">
+     <a href="#" title="On Twitter"><i class='bx bxl-twitter' ></i></a>
+     <a href="#" title="On Instagram"><i class='bx bxl-instagram' ></i></a>
+     <a href="#" title="On Facebook"><i class='bx bxl-facebook-square' ></i></i></a>
+     <a href="#" title="On YouTube"><i class='bx bxl-youtube'></i></a>
+    </div>
+</div>
+
+</body>
+</html>

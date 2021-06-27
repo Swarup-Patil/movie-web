@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="./css/navbar.css">
+
+<style>
+body{
+    background-color: #151515;
+    color: white;
+}
+
+.row{
+    max-width: 1300px;
+    margin: auto;
+}
+
+.movie{
+    display: flex;
+    width: 100%;
+}
+
+.movie-info{
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.movie-btn{
+    margin-top: 30px;
+    margin-right: 40px;
+    font-size: 16px;
+    border-radius: 50px;
+    padding: 5px 10px;
+    align-self: center;
+    justify-content: center;
+}
+
+.red{
+    background-color: #D81A24;
+    color: white;
+}
+
+.white{
+    background-color: white;
+    color: #D81A24;
+}
+
+.movie-btn p{
+    padding-right: 10px;
+
+}
+
+.button, .movie-btn{
+    display: inline-flex;
+}
+
+
+.title{
+    font-size: 40px;
+}
+
+.remove{
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.sub-title{
+    margin-bottom: 15px;
+    font-family: Montserrat;
+    font-weight: 400;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.411);
+}
+
+.text{
+    font-family: Montserrat;
+    padding-bottom: 10px;
+}
+
+/* ________________cards_______________ */
+.secondary-title{
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    padding: 20px 0;
+    font-family: Montserrat;
+}
+
+.secondary-title img{
+    margin-right: 10px;
+}
+
+
+.cardcontainer{
+    font-family: Montserrat;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 40px;
+}
+
+.card{
+    box-shadow: 0px 0px 4px 0 rgb(255 255 255 / 20%), 0px 0px 15px 0 rgb(255 255 255 / 19%);
+    text-align: center;
+    border-radius: 20px;
+    margin: 5px;
+    text-align: center;
+    width: 200px;
+}
+
+.card img{
+    border-radius: 20px;
+}
+
+.movie-name{
+    font-size: 12px;
+}
+
+.container{
+    padding: 10px 0;
+}
+
+/* __________________footer__________________ */
+.footer{
+    text-align: center;
+}
+
+.line-horizontal{
+    height: 1px;
+    background-color: white;
+    justify-content: center;
+    margin: auto;
+}
+
+.logo{
+    color: #D81A24;
+    font-size: 30px;
+}
+
+.socialmedia{
+    color: white;
+    font-size: 25px;
+}
+
+/* _____________responsive________________ */
+@media(min-width:768px){
+.cardcontainer{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+.cards{
+    padding: 20px;
+}
+
+
+}
+
+@media(min-width:320px) {
+.cardcontainer{
+    flex-wrap: wrap;
+}
+
+.cards{
+    padding-bottom: 15px;
+}
+
+.line-horizontal{
+    width: 95%;
+}
+
+.secondary-title{
+    padding-left: 15px;
+    font-size: 20px;
+}
+
+}
+</style>
+    <title>Movies</title>
+</head>
+<body>
+    <header class="main-header">
+        <nav class="main-nav">
+            <div class="nav-items-left">
+                <a href="#" class="logoname">
+                    <p>Spectre</p></a>
+                
+                    <ul class="nav-list">
+                        <li> <a href="/home" class="nav-link">| &nbsp; Home</a></li>
+                        <li> <a href="/movies" class="nav-link"> | &nbsp; Movies</a></li>
+                      </ul>
+                </div>
+                
+                <div class="nav-items-right">
+                    <a href="/cart" class="icons"><img src="/./assets/Vector.png" alt=""></a>
+                    <a href="/favourite" class="icons"><img src="/./assets/Vector (1).png" alt=""></a>
+                    <form action="/logout" method="POST">
+                        <button class="remove" href="/logout" class="icons"><img src="/./assets/Vector (2).png" alt="" ></button>
+                    </form>
+                </div>
+        </nav>
+    </header>
+
+    
+    <div class="row">
+        <div class="title secondary-title"><span><img src="./assets/Rectangle 8.png" alt=""></span>Newest Added</div>
+        
+        <div class="cardcontainer">
+            <% latest.forEach(latests => {  %>
+            <div class="cards"> 
+            <form action="" method="get">
+              <div class="card">
+                  <a href=""><img src="./uploads/<%= latests.image %>" class="card-poster"></a>
+                  <div class="container">
+                    <a class="movie-name" href="/movie/<%= latests._id %>"><%= latests.name %></a>
+                    <p class="sub-title"><%= latests.year %> | <%= latests.country %> | <%= latests.genre %></p>
+                  </div>
+              </div>
+            </form>
+            </div>
+            <% }) %> 
+        
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="title secondary-title"><span><img src="./assets/Rectangle 8.png" alt=""></span>Best of Horror</div>
+        <div class="cardcontainer">
+            <% horror.forEach(horrors => {  %>
+            <div class="cards"> 
+            <form action="" method="get">
+              <div class="card">
+                  <a href=""><img src="./uploads/<%= horrors.image %>" width="200" class="card-poster"></a>
+                  <div class="container">
+                    <a class="movie-name" href="/movie/<%= horrors._id %>"><%= horror.name %></a>
+                    <p class="sub-title"><%= horrors.year %> | <%= horrors.country %> | <%= horrors.genre %></p>
+                  </div>
+              </div>
+            </form>
+            </div>
+        <% }) %> 
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="title secondary-title"><span><img src="./assets/Rectangle 8.png" alt=""></span>Best of Action</div>
+        <div class="cardcontainer">
+            <% action.forEach(actions => {  %>
+            <div class="cards"> 
+            <form action="" method="get">
+              <div class="card">
+                  <a href=""><img src="./uploads/<%= actions.image %>" width="200" class="card-poster"></a>
+                  <div class="container">
+                    <a class="movie-name" href="/movie/<%= actions._id %>"><%=actions.name %></a>
+                    <p class="sub-title"><%= actions.year %> | <%= actions.country %> | <%= actions.genre %></p>
+                  </div>
+              </div>
+            </div>
+            <% }) %> 
+          </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="title secondary-title"><span><img src="./assets/Rectangle 8.png" alt=""></span>Best of Fantasy</div>
+        <div class="cardcontainer">
+            <% fantasy.forEach(fantasies => {  %>
+            <div class="cards"> 
+            <form action="" method="get">
+              <div class="card">
+                  <a href=""><img src="./uploads/<%= fantasies.image %>" width="200" class="card-poster"></a>
+                  <div class="container">
+                    <a class="movie-name" href="/movie/<%= fantasies._id %>"><%=fantasies.name %></a>
+                    <p class="sub-title"><%= fantasies.year %> | <%= fantasies.country %> | <%= fantasies.genre %></p>
+                  </div>
+              </div>
+            </div>
+            <% }) %> 
+            </form>
+        </div>
+    </div>
+
+    
+</body>
+</html>

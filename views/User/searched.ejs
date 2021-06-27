@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/searched.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+      <!-- navbar -->
+  <header class="main-header">
+    <nav class="main-nav">
+        <div class="nav-items-left">
+            <a href="#" class="logoname">
+                <p>Spectre</p></a>
+            
+              <ul class="nav-list">
+                <li> <a href="/home" class="nav-link">| &nbsp; Home</a></li>
+                <li> <a href="/movies" class="nav-link"> | &nbsp; Movies</a></li>
+              </ul>
+        </div>
+        
+        <div class="nav-items-right">
+            <a href="/cart" class="icons"><img src="/./assets/Vector.png" alt=""></a>
+            <a href="/favourite" class="icons"><img src="/./assets/Vector (1).png" alt=""></a>
+            <form action="/logout" method="POST">
+              <button class="remove" href="/logout" class="icons"><img src="/./assets/Vector (2).png" alt="" ></button>
+          </form>
+        </div>
+    </nav>
+</header>
+
+  <!-- container -->
+  <div class="hero">
+    <div class="hero-content">
+      <div class="hero-description">
+        <h1 >Welcome</h1>
+        <p>
+          Millions of movies, TV shows and people to discover. Explore now.
+        <p>
+        <form class="form-control" action="/search" method="POST">
+          <input type="text" name="search" placeholder="Search for a movie ">
+          <button type="submit"><i class='bx bx-search'></i></button>
+        </form>
+      </div>
+    </div>
+  </div>
+   <section class="container"> 
+       <div class="search-list">
+        <% movies.forEach(movie => {  %>
+        <form action="/addtofavourite/<%= movie._id %>" method="POST" class="searched">
+            <img class="cover-img" src="./uploads/<%= movie.image %>" alt="">
+            <div class="form-content">
+                <h1><%= movie.name %></h1>
+                <p><%= movie.year %> | <%= movie.country %> | <%= movie.genre %> |  <%= movie.genre %></p>
+                <a class="submit" href="/movie/<%= movie._id %>">View more</a>
+                <button class="submit" type="submit">Add to favourite</button>
+            </div>
+        </form>
+        <% }) %> 
+    </div>
+   </section> 
+</body>
+</html>

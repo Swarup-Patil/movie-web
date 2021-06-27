@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/navbar.css">
+
+<style>
+html{
+    height: 100%;
+}
+
+body{
+    background-color: #151515;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 550px;
+    padding-left: 50px;
+    padding-top: 100px;
+}
+
+.container h1{
+    color: white;
+}
+
+.form-control {
+  font-size: 15px;
+  color: grey;
+  border: none;
+  margin: 10px 100px 15px 0;
+}
+
+.remove{
+    background: none;
+    border: none;
+}
+
+a ,button {
+    cursor: pointer;
+}
+
+input {
+  /* border-radius: 30px; */
+  border: none;
+  font-size: 20px;
+  font-family: Montserrat;
+}
+
+select{
+    font-size: 20px;
+    color: black;
+}
+
+label{
+    color: white;
+    font-size: 20px;
+    padding-right: 15px;
+    font-family: Montserrat;
+}
+
+.button{
+    margin: 15px;
+    font-size: 20px;
+    color: white;
+    background-color: #D81A24;
+    border-radius: 50px;
+    padding: 5px 10px;
+    outline: none;
+    border: none;
+}
+    
+ /* __________________footer__________________ */
+.footer{
+    text-align: center;
+    height: 100px;
+}
+
+
+.line-horizontal{
+    width: 95%;
+    height: 1px;
+    background-color: white;
+    justify-content: center;
+    margin: auto;
+}
+
+.logo{
+    color: #D81A24;
+    font-size: 30px;
+}
+
+.socialmedia{
+    color: white;
+    font-size: 25px;
+}
+
+@media(max-width:320px){
+.container{
+    height: 600px;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+input#image{
+    width: 280px;
+}
+label{
+    width: 100%;
+}
+}
+
+</style>
+    <title>Add Movies</title>
+
+</head>
+<body>
+    <header class="main-header" id="content">
+        <nav class="main-nav">
+            <div class="nav-items-left">
+                <a href="#" class="logoname">
+                    <p>Spectre</p></a>
+                
+                    <ul class="nav-list">
+                        <li> <a href="/adminpanel" class="nav-link">| &nbsp; Home</a></li>
+                      </ul>
+                </div>
+                
+                <div class="nav-items-right">
+                    <form action="/logout" method="POST">
+                        <button class="remove" href="/logout" class="icons"><img src="/./assets/Vector (2).png" alt="" ></button>
+                    </form>
+                </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Add Movie</h1>
+        <form action="/update/<%= movie._id %>" method="POST">
+            <div class="form-control">
+                <label>Movie Name</label>
+                <input type="text" name="moviename" required class="" value="<%= movie.name %>">
+            </div>
+            <div class="form-control">
+                <label>Year released</label> 
+                <input type="text" name="year" required class="" value="<%= movie.year %>">
+            </div>
+            <div class="form-control">
+                <label>Country</label>
+                <input type="text" name="country" required class="" value="<%= movie.country %>">
+            </div>
+            <div class="two">
+                <label>Price</label>
+                <input type="text" name="price" required class="" value="<%= movie.price %>">
+            </div>
+            <div class="form-control">
+                <label for="genre"  >Choose a type:</label>
+                 <select id="type" name="genre" class="drop" value="<%= movie.genre %>">
+                 <option value="Thrill">Thrill</option>
+                 <option value="Adventure">Adventure</option>
+                 <option value="Action">Action</option>
+                 <option value="Fantasy">Fantasy</option>
+                 <option value="Horror">Horror</option>
+                </select>
+            </div>
+            <button type="submit" class="button">Submit</button>
+        </form>
+    </div>
+
+    <div class="footer" id="footer">
+        <div class="line-horizontal"></div>
+        <a href="#" class="logo"><p>Spectre</p></a>
+        <div class="socialmedia">
+         <a href="#" title="On Twitter"><i class='bx bxl-twitter' ></i></a>
+         <a href="#" title="On Instagram"><i class='bx bxl-instagram' ></i></a>
+         <a href="#" title="On Facebook"><i class='bx bxl-facebook-square' ></i></i></a>
+         <a href="#" title="On YouTube"><i class='bx bxl-youtube'></i></a>
+        </div>
+    </div>
+</body>
+</html>

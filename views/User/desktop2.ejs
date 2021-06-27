@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="/css/navbar.css">
+
+<style>
+body{
+    background-color: #151515;
+    color: white;
+    max-width: 1400;
+}
+
+.row{
+    width: 1350px;
+    margin: auto;
+}
+.movie{
+    display: flex;
+    width: 100%;
+}
+
+.movie-info{
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 10px 0 40px 0;
+}
+
+.poster{
+    width: 400px;
+    height: auto;
+}
+
+.movie-btn{
+    margin-top: 30px;
+    margin-right: 40px;
+    font-size: 16px;
+    border-radius: 50px;
+    font-weight: 300;
+    padding: 5px 10px;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+}
+
+.red{
+    background-color: #D81A24;
+    color: white;
+}
+
+.white{
+    background-color: white;
+    color: #D81A24;
+}
+
+.movie-btn p{
+    padding-right: 10px;
+
+}
+
+.button, .movie-btn{
+    display: inline-flex;
+}
+
+.title{
+    font-size: 40px;
+}
+
+.sub-title{
+    padding-bottom: 15px;
+    font-family: Montserrat;
+    font-weight: 400;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.411);
+}
+
+.text{
+    font-family: Montserrat;
+    padding: 10px 0;
+    font-weight: 300;
+}
+
+.container{
+    padding: 10px 0;
+}
+
+.remove{
+    background: none;
+    border: none;
+}
+
+/* ________________cards_______________ */
+.secondary-title{
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    padding: 0 40px 20px;
+    font-family: Montserrat;
+}
+
+.secondary-title img{
+    margin-right: 10px;
+}
+
+
+.cardcontainer{
+    font-family: Montserrat;
+    display: flex;
+    padding: 0 40px 80px;
+}
+
+.card{
+    box-shadow: 0px 0px 4px 0 rgb(255 255 255 / 20%), 0px 0px 15px 0 rgb(255 255 255 / 19%);
+    text-align: center;
+    border-radius: 20px;
+    margin: 5px;
+    text-align: center;
+    margin-right: 30px;
+}
+
+.card img{
+    border-radius: 20px;
+}
+
+.movie-name{
+    padding-top: 10px;
+    font-size: 12px;
+}
+
+.sub-title{
+    font-size: 10px;
+    padding-bottom: 10px;
+}
+
+
+/* __________________footer__________________ */
+.footer{
+    text-align: center;
+    padding: 10px 0 ;
+}
+
+.line-horizontal{
+    width: 95%;
+    height: 1px;
+    background-color: white;
+    justify-content: center;
+    margin: auto;
+}
+
+.logo{
+    color: #D81A24;
+    font-size: 30px;
+}
+
+.socialmedia{
+    color: white;
+    font-size: 25px;
+}
+
+</style>
+    <title>Movie Page</title>
+</head>
+<body>
+    <header class="main-header">
+        <nav class="main-nav">
+            <div class="nav-items-left">
+                <a href="#" class="logoname">
+                    <p>Spectre</p></a>
+                
+                    <ul class="nav-list">
+                        <li> <a href="/home" class="nav-link">| &nbsp; Home</a></li>
+                        <li> <a href="/movies" class="nav-link"> | &nbsp; Movies</a></li>
+                      </ul>
+                </div>
+                
+                <div class="nav-items-right">
+                    <a href="/cart" class="icons"><img src="/./assets/Vector.png" alt=""></a>
+                    <a href="/favourite" class="icons"><img src="/./assets/Vector (1).png" alt=""></a>
+                    <form action="/logout" method="POST">
+                        <button class="remove" href="/logout" class="icons"><img src="/./assets/Vector (2).png" alt="" ></button>
+                    </form>
+                </div>
+        </nav>
+    </header>
+
+    <div class="page-content">
+        <div class="movie">
+            <div class="movie-info poster">
+                <img src="/./uploads/<%= movie.image %>"  class="poster" alt="">
+            </div>
+        
+            <div class="movie-info description">
+                <h1 class="title"><%= movie.name %></h1>
+                <p class="sub-title movie"><%= movie.year %> | <%= movie.country %> | <%= movie.genre %> | <%= movie.price %></p>
+                <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus. </p>
+                <p class="text">
+                Dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis</p>
+    
+                <div class="button">
+                    <form action="/addtocart/<%= movie._id %>" method="POST">
+                    <button class="movie-btn red" type="submit">
+                        <p>Add to Cart</p>  <img src="/./assets/bi_cart-plus-fill.png" class="m-icon" alt=""></button></form>
+                    
+                    <form action="/addtofavourite/<%= movie._id %>" method="POST">
+                    <button class="movie-btn white" type="submit">
+                        <p>Add to Favourites</p>  <img src="/./assets/bi_bookmark-fill.png" class="m-icon" alt="" width="15" height="20"></button></form>
+                </div>
+            </div>       
+        </div>
+        
+        <div class="row" class="container">
+            <div class="title secondary-title"><span><img src="/./assets/Rectangle 8.png" alt=""></span>Similar Movies</div>
+            <div class="cardcontainer">
+                <% similar_movie.forEach(movies => {  %>
+                <form action="" method="get">
+                  <div class="card">
+                      <a href=""><img src="/./uploads/<%= movies.image %>" width="200" class="card-poster"></a>
+                      <div class="container">
+                        <a class="movie-name" href=""><%= movies.name %></a>
+                        <p class="sub-title"><%= movies.year %> | <%= movies.country %> | <%= movies.genre %></p>
+                      </div>
+                  </div>
+                </form>
+                <% }) %> 
+            </div>
+        </div>
+          
+            
+    
+        <div class="footer">
+            <div class="line-horizontal"></div>
+            <a href="#" class="logo"><p>Spectre</p></a>
+            <div class="socialmedia">
+             <a href="#" title="On Twitter"><i class='bx bxl-twitter' ></i></a>
+             <a href="#" title="On Instagram"><i class='bx bxl-instagram' ></i></a>
+             <a href="#" title="On Facebook"><i class='bx bxl-facebook-square' ></i></i></a>
+             <a href="#" title="On YouTube"><i class='bx bxl-youtube'></i></a>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
